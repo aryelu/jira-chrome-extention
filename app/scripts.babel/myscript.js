@@ -1,12 +1,15 @@
 'use strict';
+/* globals $ */
 
-let jiralist = document.createElement('div');
-jiralist.className = 'jira-text';
+function singleJiraDisplayCommit() {
+  let issueLinkElementText = $('.issue-link').text();
+  let summaryValElementText = $('#summary-val').text();
+  let innerText = '#' + issueLinkElementText + ' | ' + summaryValElementText;
+  let jiralist = $('<div class="jira-text">' + innerText + '</div>');
 
-let issueLinkElementText = document.querySelector('.issue-link').text;
-let summaryValElementText = document.querySelector('#summary-val').textContent;
-let innerText = document.createTextNode('#' + issueLinkElementText + ' | ' + summaryValElementText);
-jiralist.appendChild(innerText);
+  $('.aui-page-header-main').append(jiralist);
+}
 
-let container = document.querySelector('.aui-page-header-main');
-container.appendChild(jiralist);
+$(document).ready(function () {
+  singleJiraDisplayCommit();
+});

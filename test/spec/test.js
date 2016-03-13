@@ -2,10 +2,8 @@
   'use strict';
 
   describe('Give it some context', function () {
-    describe('maybe a bit more context here', function () {
-      it('should run here few assertions', function () {
-
-      });
+    it('should create .jira-text class', function () {
+      expect($('.jira-text').length).toBe(1);
     });
   });
 })();

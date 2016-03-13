@@ -14,9 +14,9 @@
   "permissions": [],
   "content_scripts": [
     {
-      "matches": ["https://jira.wixpress.com/browse/*"],
+      "matches": ["https://jira.wixpress.com/*"],
       "css": ["styles/main.css"],
-      "js": ["scripts/myscript.js"]
+      "js": ["./bower_components/jquery/dist/jquery.min.js", "scripts/myscript.js"]
     }
   ]
 }
